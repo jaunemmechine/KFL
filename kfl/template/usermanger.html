@@ -1,0 +1,46 @@
+<div ng-include="'template/head.html'"></div>
+<div class="container">
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="../img/me.jpg" style="width:100px;height: 100px;border-radius: 50%">
+                </a>
+            </div>
+            <div class="media-body">
+                <br>
+                <h4 class="media-heading">用户ID：kfl_{{user.phone}}</h4>
+                <span class="glyphicon glyphicon-king">普通会员</span>
+            </div>
+        </li>
+    </ul>
+    <div class="panel panel-default">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                <a href="#myOrder">我的订单
+                <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-comment"></span>
+                <a href="#">我的评价</a>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-user"></span>
+                <a href="#">我的好友</a>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <a href="#">我的收藏</a>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <a href="#">客服中心</a></li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-book"></span>
+                <a href="#">关于开饭啦</a></li>
+        </ul>
+    </div>
+    <a href="/logout" class="btn btn-danger form-control">退出</a>
+</div>
+<div ng-include="'template/footer.html'"></div>

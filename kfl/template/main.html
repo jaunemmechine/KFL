@@ -1,0 +1,34 @@
+<div ng-include="'template/head.html'"></div>
+<div style="background-color: rgba(0,0,0,0.2);color:white; margin-bottom: 5px">
+    <marquee>今日新品:酸甜开胃虾、桂香紫薯山药卷、小米椒爆炒小公鸡</marquee>
+</div>
+<div class="container">
+    <div class="form-group has-feedback">
+       <input type="text" class="form-control" ng-model="searchText" ng-keydown="searchDishes($event)">
+        <span class="form-control-feedback glyphicon glyphicon-search"></span>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="dish in dishes">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#detail/{{dish.did}}">
+                        <img ng-src="img/{{dish.img_sm}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4>{{dish.name}}</h4>
+                    <p>{{dish.material}}</p>
+                    <p style="border-top: 1px solid #ccc; color:red">￥{{dish.price}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="alert alert-warning text-center" ng-click="getMoreDishes()" ng-show="isLoadStatus<3">
+       <span ng-show="isLoadStatus==1">加载更多</span>
+        <img src="img/loading_ajax.gif" width="40px" ng-show="isLoadStatus==2">
+    </div>
+    <div class="alert alert-info text-center" ng-show="isLoadStatus==3">
+        <span >没有更多了</span>
+    </div>
+</div>
+<div ng-include="'template/footer.html'"></div>

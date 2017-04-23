@@ -1,0 +1,28 @@
+<div ng-include="'template/head.html'"></div>
+<div class="container">
+    <h4 class="glyphicon glyphicon-chevron-left"><a href="#myOrder">支付订单</a></h4>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <img src="../img/yl.jpg" style="width: 20px;height: 20px">银联卡支付
+            <input type="radio" name="pay" class=" pull-right" ng-model="choose">
+            <p style="color:#CCC">信用卡储蓄存款，无需开通网银</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <img src="../img/wx.jpg" style="width: 20px;height: 20px">微信支付
+            <input type="radio" name="pay" class=" pull-right" ng-model="choose">
+            <p style="color:#CCC">推荐安装5.0以上的版本的用户使用</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <img src="../img/zfb.jpg" style="width: 20px;height: 20px">支付宝
+            <input type="radio" name="pay" class=" pull-right" ng-model="choose">
+            <p style="color:#CCC">推荐有支付宝帐号的用户使用</p>
+        </div>
+    </div>
+<button type="button" class="btn btn-warning form-control">确认支付</button>
+</div>

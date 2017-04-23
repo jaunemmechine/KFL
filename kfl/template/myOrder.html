@@ -1,0 +1,45 @@
+<div ng-include="'template/head.html'"></div>
+<div class="modal fade" id="delModel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title">您确定要删除吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-click="del()" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="font-size: 12px">
+    <h4 class="text-center"><strong>我的订单</strong></h4>
+    <div class="panel panel-default">
+        <table class="table table-striped" ng-show="hasOrder">
+            <tr class="text-center">
+                <th >编号</th>
+                <th>菜品</th>
+                <th>下单时间</th>
+                <th>联系人</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="o in orders">
+                <td>{{o.oid}}</td>
+                <td><img ng-src="img/{{o.img_sm}}"><span>价格：￥{{o.price}}</span></td>
+                <td>{{o.order_time|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{o.user_name}}</td>
+                <td> <button type="button" ng-click="setCurrent($index)" class="btn btn-danger pull-right" data-toggle="modal"  data-target="#delModel">删除</button></td>
+            </tr>
+        </table>
+        <hr>
+        <div class="pull-right">
+            <span>总计：￥{{total()}}</span>
+            <button class="btn btn-primary input-lg" ng-click="account()">结算</button>
+        </div>
+    </div>
+    <div class="alert alert-danger text-center" ng-hide="hasOrder">
+          请先点单~
+    </div>
+</div>
+<div ng-include="'template/footer.html'"></div>
